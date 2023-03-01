@@ -12,7 +12,7 @@ const Btn: FC = (
   }
 ) => {
   return (
-    <Button className="text-center">
+    <Button className="primary">
       Btn
     </Button>
   );
