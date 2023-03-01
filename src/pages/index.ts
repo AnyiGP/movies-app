@@ -4,4 +4,4 @@ export { LatestRelases } from "./latest-releases";
 export { Login } from "./login";
 export { Popular } from "./popular";
 export { Search } from "./search";
-export {} from "./sign-up";
+export { Signup } from "./sign-up";
