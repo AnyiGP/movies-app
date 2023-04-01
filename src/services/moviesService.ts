@@ -4,9 +4,9 @@ import { api, apiMovies } from "../utils/axios";
 
 //trae todas las pelis
 const getAll = async () => {
-  const response = await apiMovies.get("/users.json");
+  const response = await apiMovies.get("/movie/popular");
 
-  //   console.log(response)
+    // console.log(response)
   return response.data;
 };
 

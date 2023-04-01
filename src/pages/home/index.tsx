@@ -13,6 +13,9 @@ const Home = () => {
       setMovies(response.data.results));
     //   console.log(response.data.results)
     // );
+
+    //TENGO QUE HACER LO DE ARRIBA EN EL SERVICIO DE API MOVIES
+
   }, []);
 
   return (
@@ -21,7 +24,7 @@ const Home = () => {
         Home
         <ul>
           {/* Slide 5 pelis+ Carrousel populares 10 pelis + Carrousel ultimos-lanzamientos 10 pelis */}
-          {movies.map((movie) => (
+          {movies.map(movie => (
             <li>
                 {/* {movie.title} */}
                 </li>
