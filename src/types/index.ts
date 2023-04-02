@@ -21,7 +21,10 @@ export type Movie = {
   //faltan agregar propiedades
 };
 
+
 export type MovieTypePayload = Omit<Movie, "id">;
+// export { Movie }
+
 
 //   export type AddTaskForm = Omit<Task, "id" | "category" | "date"> & { category: string, date: string };
 //   export type AddTaskPayload = Omit<Task, 'id'>

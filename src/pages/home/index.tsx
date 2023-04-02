@@ -24,9 +24,9 @@ const Home = () => {
         Home
         <ul>
           {/* Slide 5 pelis+ Carrousel populares 10 pelis + Carrousel ultimos-lanzamientos 10 pelis */}
-          {movies.map(movie => (
+          {movies.map(Movie => (
             <li>
-                {/* {movie.title} */}
+                {/* {Movie.title} */}
                 </li>
           ))}
         </ul>
