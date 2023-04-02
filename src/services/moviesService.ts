@@ -1,5 +1,5 @@
 import {} from "../helpers/mapToArray";
-import { MovieType } from "../types";
+import { Movie } from "../types";
 import { api, apiMovies } from "../utils/axios";
 
 //trae todas las pelis

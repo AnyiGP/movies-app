@@ -1,7 +1,7 @@
 import { Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { apiMovies } from "../../utils/axios";
-import { MovieType } from '../../types'
+import { Movie } from '../../types'
 
 const Home = () => {
   //   //ejemplo de movies, creo un estado
