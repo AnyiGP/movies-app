@@ -7,7 +7,7 @@ export type User = {
   birthdate: Date;
 };
 
-//creo un type para trer lo estado para el formulario
+//creo un type para traer lo estado para el formulario
 export type SignUpForm = Omit<User, "id" | "birthdate"> & { birthdate: Date };
 export type SignUpPayload = SignUpForm;
 
