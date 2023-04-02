@@ -2,9 +2,6 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://movies-app-7da5f-default-rtdb.firebaseio.com/",
-  params: {
-    api_key: "prueba",
-  },
 });
 
 const apiMovies = axios.create({
@@ -16,6 +13,3 @@ const apiMovies = axios.create({
 
 
 export { api, apiMovies };
-
-// api.post("/users.json");
-// api.post("/addCategory.json")

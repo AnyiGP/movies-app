@@ -1,6 +1,6 @@
 import { Layout } from "../../components";
 
-const LatestRelases = () => {
+const LatestReleases = () => {
   return (
     <>
       <Layout>Ultimos Lanzamientos{/* 20 peliculas + paginador} */}</Layout>
@@ -8,4 +8,4 @@ const LatestRelases = () => {
   );
 };
 
-export { LatestRelases };
+export { LatestReleases };

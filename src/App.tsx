@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Details,
   Home,
-  LatestRelases,
+  LatestReleases,
   Login,
   Popular,
   Search,
@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/latest-relases" element={<LatestRelases />} />
+        <Route path="/latest-releases" element={<LatestReleases />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/details" element={<Details />} />
         <Route path="/search" element={<Search />} />
