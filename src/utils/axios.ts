@@ -2,7 +2,11 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://movies-app-7da5f-default-rtdb.firebaseio.com/",
+  //params?
 });
+
+//api.post('/users.json')
+//params {key: "lkdlaksdkajslk", token: "aksldhas"}//
 
 const apiMovies = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
