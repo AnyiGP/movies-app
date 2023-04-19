@@ -17,7 +17,7 @@ export type Movie = {
   // date: Date;
   poster_path: string;
   description: string;
-  viedo: boolean;
+  video: boolean;
   //faltan agregar propiedades
 };
 
