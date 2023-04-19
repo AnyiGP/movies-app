@@ -6,10 +6,9 @@ const api = axios.create({
   //   api_key: 'prueba-api-key',
   //   prueba: 'prueba-2'
   // }
-  
 });
 
-api.post('/users.json')
+api.post("/users.json");
 //params {key: "lkdlaksdkajslk", token: "aksldhas"}//
 
 // solicitadues mas complejas que son a la base de datos de firebase
@@ -19,7 +18,6 @@ api.post('/users.json')
 
 // formulario de login, de sign-up y de registro
 
-
 const apiMovies = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
   params: {
@@ -27,7 +25,4 @@ const apiMovies = axios.create({
   },
 });
 
-
-export { api, 
-  apiMovies 
-};
+export { api, apiMovies };

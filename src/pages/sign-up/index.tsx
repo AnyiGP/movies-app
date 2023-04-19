@@ -6,12 +6,8 @@ const Signup = () => {
       {/* Formulario de sign-up */}
       Formulario Sign-Up
       <SignUpForm />
-
-
-
     </Layout>
   );
 };
 
 export { Signup };
-
