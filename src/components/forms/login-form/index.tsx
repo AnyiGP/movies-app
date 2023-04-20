@@ -7,11 +7,12 @@ import { SignUpForm } from "../../../types";
 import { useEffect } from "react";
 
 const LoginForm = () => {
-  return( 
-//   <Layout>Login</Layout>;
-<Form className="px-5 mt-5" 
-// onSubmit={handleSubmit(onSubmit)}
->
+  return (
+    //   <Layout>Login</Layout>;
+    <Form
+      className="px-5 mt-5"
+      // onSubmit={handleSubmit(onSubmit)}
+    >
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formEmail">
           <Form.Label>Email</Form.Label>
@@ -32,18 +33,23 @@ const LoginForm = () => {
         </Form.Group>
       </Row>
 
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
+
       <Button variant="primary" type="submit">
         Enviar
       </Button>
-      
-      <Button variant="secondary" type="button" 
-      // onClick={handleReset}
+
+      <Button
+        variant="secondary"
+        type="button"
+        // onClick={handleReset}
       >
         Limpiar
       </Button>
     </Form>
   );
-
 };
 
 export { LoginForm };
