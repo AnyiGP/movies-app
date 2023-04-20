@@ -13,7 +13,6 @@ import { useForm } from "react-hook-form";
 import { SignUpForm } from "../../../types";
 import { useEffect } from "react";
 
-
 //----------------------//
 // import axios from 'axios';
 // const firebaseUrl = 'https://movies-app-7da5f-default-rtdb.firebaseio.com/users.json';
@@ -33,11 +32,10 @@ import { useEffect } from "react";
 //---------------------//
 
 const SignUp = () => {
-  const { register, handleSubmit } = useForm<SignUpForm>();
+  const { register, handleSubmit, reset } = useForm<SignUpForm>();
 
   const onSubmit = (data: SignUpForm) => {
-    serviceUsers.add(
-      data)
+    serviceUsers.add(data);
 
     //   {
     //   ...data,
@@ -45,14 +43,31 @@ const SignUp = () => {
     // });
   };
 
-useEffect(() => {
-  serviceUsers.getAll().then(data => console.log(data))
-  .catch((error) => {
-        console.error('Error al guardar datos en Firebase:', error);
+  useEffect(() => {
+    serviceUsers
+      .getAll()
+      .then((data) => console.log(data))
+      .catch((error) => {
+        console.error("Error al guardar datos en Firebase:", error);
       });
-}, [])
+      // reset({
+      //   name: "",
+      //   lastname: "",
+      //   email: "",
+      //   password: "",
+      //   // birthdate: "" me tira error
+      // });
+  }, []);
 
-
+  const handleReset = () => {
+    reset({
+      name: "",
+      lastname: "",
+      email: "",
+      password: "",
+      // birthdate: "" me tira error
+    });
+  };
 
   //-----------------------//
   // useEffect (() => {
@@ -61,20 +76,18 @@ useEffect(() => {
   //-----------------------//
 
   return (
-    <Form className="px-5 mt-5" 
-    onSubmit={handleSubmit(onSubmit)}
-    >
+    <Form className="px-5 mt-5" onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-3" controlId="formName">
         <Form.Label>Nombre</Form.Label>
-        <Form.Control type="text" placeholder="Nombre" 
-        {...register("name")} 
-        />
+        <Form.Control type="text" placeholder="Nombre" {...register("name")} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formLastname">
         <Form.Label>Apellido</Form.Label>
-        <Form.Control type="text" placeholder="Apellido" 
-        {...register("lastname")} 
+        <Form.Control
+          type="text"
+          placeholder="Apellido"
+          {...register("lastname")}
         />
       </Form.Group>
 
@@ -84,7 +97,7 @@ useEffect(() => {
           <Form.Control
             type="email"
             placeholder="Email"
-           {...register("email")}
+            {...register("email")}
           />
         </Form.Group>
 
@@ -93,7 +106,7 @@ useEffect(() => {
           <Form.Control
             type="password"
             placeholder="Password"
-          {...register("password")}
+            {...register("password")}
           />
         </Form.Group>
       </Row>
@@ -101,14 +114,16 @@ useEffect(() => {
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formBirthday">
           <Form.Label>Fecha de Nacimiento</Form.Label>
-          <Form.Control type="date" 
-          {...register("birthdate")} 
-          />
+          <Form.Control type="date" {...register("birthdate")} />
         </Form.Group>
       </Row>
 
       <Button variant="primary" type="submit">
         Enviar
+      </Button>
+      
+      <Button variant="secondary" type="button" onClick={handleReset}>
+        Limpiar
       </Button>
     </Form>
   );
