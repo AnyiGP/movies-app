@@ -17,18 +17,18 @@ const Login = () => {
     // .add(data);
   };
 
-  useEffect(() => {
-    serviceUsers
-      .getAll()
-      .then((data) => console.log(data))
-      .catch((error) => {
-        console.error("Error al guardar datos en Firebase:", error);
-      });
-    // reset({
-    //   email: "",
-    //   password: "",
-    // });
-  }, []);
+  // useEffect(() => {
+  //   serviceUsers
+  //     .getAll()
+  //     .then((data) => console.log(data))
+  //     .catch((error) => {
+  //       console.error("Error al guardar datos en Firebase:", error);
+  //     });
+  //   // reset({
+  //   //   email: "",
+  //   //   password: "",
+  //   // });
+  // }, []);
 
   const handleReset = () => {
     reset({
