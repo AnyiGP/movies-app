@@ -1,6 +1,15 @@
 import { Layout, LoginForm } from "../../components";
+import { withAuth } from "../../hoc";
+import { useMe } from "../../hooks";
 
-const Login = () => {
+const LoginPage = () => {
+  // const { login } = useMe()
+
+  // const handleSubmit = () => {
+
+  //   // login(user, pass)
+  // }
+
   return (
     <Layout>
       Formulario Login
@@ -9,4 +18,4 @@ const Login = () => {
   );
 };
 
-export { Login };
+export const Login = withAuth(LoginPage);
