@@ -35,16 +35,37 @@ const getAll = async (): Promise<User[]> => {
   return mapToArray(response.data);
 };
 
-const getByEmail = async (email: string) => {
+// const getByEmail = async (email: string) => {
+//   const users = await getAll();
+//   const user = users.find((user) => user.email === email);
+
+//   // console.log(response);
+//   return user;
+// };
+
+// const getByToken = async (token: string) => {
+//   const users = await getAll();
+//   const user = users.find((user) => user.token === token);
+
+//   // console.log(response);
+//   return user;
+// };
+
+const getBy = async (type: 'email'| 'token', value: string) => {
   const users = await getAll();
-  const user = users.find((user) => user.email === email);
+  const user = users.find((user) => user[type] === value);
 
   // console.log(response);
   return user;
 };
 
+
 const update = ({ id, ...rest }: Partial<User>) => {
-  const response = api.patch(`/users/${id}.json`, rest);
+  const response = api.patch(`/users/${id}.json`, { ...rest });
 };
 
-export const serviceUsers = { add, getAll, getByEmail, update };
+export const serviceUsers = { add, getAll, 
+  // getByEmail, 
+  update, 
+  // getByToken, 
+  getBy };
