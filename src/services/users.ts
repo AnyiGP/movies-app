@@ -1,3 +1,4 @@
+import { mapToArray } from "../helpers/mapToArray";
 import { SignUpPayload } from "../types";
 import { User } from "../types";
 import { api } from "../utils/axios";
@@ -27,11 +28,19 @@ const add = async (
   return response.data;
 };
 
-const getAll = async () => {
+const getAll = async (): Promise<User[]> => {
   const response = await api.get("/users.json");
 
-  console.log(response);
-  return response.data;
+  // console.log(response);
+  return mapToArray(response.data);
 };
 
-export const serviceUsers = { add, getAll };
+const getByEmail = async (email: string) => {
+  const users = await getAll();
+  const user = users.find(user => user.email === email)
+
+  // console.log(response);
+  return user;
+}; 
+
+export const serviceUsers = { add, getAll, getByEmail };
