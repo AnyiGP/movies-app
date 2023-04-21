@@ -9,6 +9,7 @@ const useMe = () => {
     if (user?.password === password) {
         const token = tokenGenerator()
         serviceUsers.update({id: user.id, token})
+        localStorage.setItem("token", token)
         // console.log('login correcto')
         
         //redireccionar a home
