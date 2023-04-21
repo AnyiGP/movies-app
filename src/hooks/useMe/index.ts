@@ -1,3 +1,4 @@
+import { tokenGenerator } from "../../helpers/tokenGenerator";
 import { serviceUsers } from "../../services/users";
 import { LoginForm, User } from "../../types";
 
@@ -6,9 +7,10 @@ const useMe = () => {
     const user = await serviceUsers.getByEmail(email);
 
     if (user?.password === password) {
-        console.log('login correcto')
-        //generar un token
-        //guardar el token el la bbdd
+        const token = tokenGenerator()
+        serviceUsers.update({id: user.id, token})
+        // console.log('login correcto')
+        
         //redireccionar a home
     } else {
         console.log('login incorrecto')

@@ -37,10 +37,14 @@ const getAll = async (): Promise<User[]> => {
 
 const getByEmail = async (email: string) => {
   const users = await getAll();
-  const user = users.find(user => user.email === email)
+  const user = users.find((user) => user.email === email);
 
   // console.log(response);
   return user;
-}; 
+};
 
-export const serviceUsers = { add, getAll, getByEmail };
+const update = ({ id, ...rest }: Partial<User>) => {
+  const response = api.patch(`/users/${id}.json`, rest);
+};
+
+export const serviceUsers = { add, getAll, getByEmail, update };

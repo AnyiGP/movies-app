@@ -5,6 +5,7 @@ export type User = {
   email: string;
   password: string;
   birthdate: Date;
+  token?: string
 };
 
 //creo un type para traer lo estado para el formulario
