@@ -26,6 +26,8 @@ type Provider = {
 
 const AuthProvider: FC<Provider> = ({ children }) => {
   const [me, setMe] = useState<Partial<User> | null>();
+  
+  
   return (
     <AuthContext.Provider value={{ me, setMe }}>
       {children}

@@ -36,7 +36,6 @@ const useMe = () => {
       setMe({ id, name, lastname, email });
     } else {
         setMe(null)
-      console.log("login incorrecto");
     }
   };
 
@@ -44,7 +43,8 @@ const useMe = () => {
   //debe llevar a sign up si no esta logueado, para ingresar los datos
 
   const forgotPassword = () => {};
-
+  //btn, enviar mail con nueva cs.
+  
   const loginWithToken = async () => {
     const token = localStorage.getItem("token");
 
@@ -66,8 +66,8 @@ const useMe = () => {
   const logOut = async () => {
     console.info('logOut')
 
-    // await serviceUsers.update({ id: me?.id, token: null };
-    //     setMe(undefined));
+    await serviceUsers.update({ id: me?.id,token: null });
+        setMe(null);
   };
 
   return { me, login, signUp, forgotPassword, loginWithToken, logOut };
