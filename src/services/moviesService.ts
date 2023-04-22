@@ -10,5 +10,5 @@ const getAll = async () => {
   return response.data;
 };
 
-export const serviceUsers = { getAll };
+export const serviceMovies = { getAll };
 // y 'este d'onde lo uso?

@@ -19,6 +19,8 @@ const StoreContext = createContext<Context>(
 const StoreProvider: FC<Provider> = ({ children }) => {
   const [users, setUsers] = useState<User[]>([]);
 
+  //const loadMovies = () => serviceMovies.getAll().then((data)=>setMovies(data))
+  //consulta a la api directamente desde el context, busco tenerlas disponibles para mostrarlas.
   const loadUsers = () => serviceUsers.getAll().then((data) => setUsers(data))
 
   return (

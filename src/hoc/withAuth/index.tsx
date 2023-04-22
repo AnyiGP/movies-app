@@ -11,18 +11,19 @@ const withAuth = (Component: FC): FC => {
     const { me } = useMe();
 
     const location = useLocation();
-    const navigate = useNavigate()
-    
+    const navigate = useNavigate();
+
+
+
     useEffect(() => {
-        console.log(me, location.pathname);
-        // console.log(me)
-      if (me && location.pathname) {
-        navigate("/")
+      // console.log(me, location.pathname);
+      // console.log(me)
+      if (me && publicRoutes.includes(location.pathname)) {
+        navigate("/");
       }
 
-      if(!me && !publicRoutes.includes(location.pathname))
-      navigate("/login")
-    }, [me, location]);
+      if (!me && !publicRoutes.includes(location.pathname)) navigate("/login");
+    }, [me, location, navigate]);
 
     return <Component />;
   };

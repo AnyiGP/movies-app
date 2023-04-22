@@ -19,6 +19,8 @@ const HomePage = () => {
     //TENGO QUE HACER LO DE ARRIBA EN EL SERVICIO DE API MOVIES
   }, []);
 
+  
+
   return (
     <>
       <Layout>

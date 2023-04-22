@@ -9,9 +9,8 @@ import {
 import { User } from "../../types";
 
 type Context = {
-  me?: Partial<User>;
-  setMe: 
-  Dispatch<SetStateAction<Partial<User> | undefined>>;
+  me?: Partial<User> | null;
+  setMe: Dispatch<SetStateAction<Partial<User> | undefined | null>>;
   //
 };
 
@@ -26,7 +25,7 @@ type Provider = {
 };
 
 const AuthProvider: FC<Provider> = ({ children }) => {
-  const [me, setMe] = useState<Partial<User>>();
+  const [me, setMe] = useState<Partial<User> | null>();
   return (
     <AuthContext.Provider value={{ me, setMe }}>
       {children}

@@ -8,29 +8,23 @@ import { AuthContext } from "../../contexts/auth";
 const useMe = () => {
   // const [storage, setStorage] = useLocalStorage()
 
-  const { me, setMe  } = useContext(AuthContext)
+  const { me, setMe } = useContext(AuthContext);
 
-//   const [me, setMe] = useState<Partial<User>>();
+  //   const [me, setMe] = useState<Partial<User>>();
 
-    // useEffect(() => {
-    // //   console.log(me)
-    //   loginWithToken();
-    // }, [me]);
+  // useEffect(() => {
+  // //   console.log(me)
+  //   loginWithToken();
+  // }, [me]);
 
   const login = async ({ email, pass }: LoginForm) => {
-    // console.info("login")
+    console.info("login")
 
-    
-    // const { id, name, lastname, password } 
-    const user
-    = await serviceUsers.getBy(
-      "email",
-      email
-    );
+    // const { id, name, lastname, password }
+    const user = await serviceUsers.getBy("email", email);
 
     if (user && user.password === pass) {
-    
-        const {id, name, lastname} = user
+      const { id, name, lastname } = user;
 
       const token = tokenGenerator();
       serviceUsers.update({ id, token });
@@ -39,29 +33,42 @@ const useMe = () => {
 
       //redireccionar a home
 
-      setMe({ id, name, lastname, email, token });
+      setMe({ id, name, lastname, email });
     } else {
+        setMe(null)
       console.log("login incorrecto");
     }
   };
 
   const signUp = (user: Omit<User, "id">) => {};
+  //debe llevar a sign up si no esta logueado, para ingresar los datos
 
   const forgotPassword = () => {};
 
   const loginWithToken = async () => {
     const token = localStorage.getItem("token");
 
-    if (token) {
-      const { id, name, lastname, email } = (await serviceUsers.getBy(
-        "token",
-        token
-      )) as User;
-      //   console.log(user)
-      setMe({ id, name, lastname, email });
+    if (token && !me) {
+      const user = await serviceUsers.getBy("token", token);
+      if (user) {
+        setMe({
+          id: user.id,
+          name: user.name,
+          lastname: user.lastname,
+          email: user.email,
+        });
+      } else {
+        setMe(null)
+      }
     }
   };
-  const logOut = () => {};
+
+  const logOut = async () => {
+    console.info('logOut')
+
+    // await serviceUsers.update({ id: me?.id, token: null };
+    //     setMe(undefined));
+  };
 
   return { me, login, signUp, forgotPassword, loginWithToken, logOut };
 };
