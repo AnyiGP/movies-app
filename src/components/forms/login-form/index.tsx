@@ -10,12 +10,16 @@ import { useMe } from "../../../hooks";
 const Login = () => {
   const { register, handleSubmit, reset } = useForm<LoginForm>();
 
-  const { login } = useMe();
+  const { login, me } = useMe();
 
   const onSubmit = (data: LoginForm) => {
     login(data);
     // .add(data);
   };
+
+  // useEffect(() => {
+  //   console.log(me);
+  // }, [me]);
 
   // useEffect(() => {
   //   serviceUsers
@@ -33,7 +37,7 @@ const Login = () => {
   const handleReset = () => {
     reset({
       email: "",
-      password: "",
+      pass: "",
     });
   };
 
@@ -54,7 +58,7 @@ const Login = () => {
           <Form.Control
             type="password"
             placeholder="Password"
-            {...register("password")}
+            {...register("pass")}
           />
         </Form.Group>
       </Row>

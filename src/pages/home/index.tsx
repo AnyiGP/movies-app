@@ -2,8 +2,9 @@ import { Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { apiMovies } from "../../utils/axios";
 import { Movie } from "../../types";
+import { withAuth } from "../../hoc";
 
-const Home = () => {
+const HomePage = () => {
   //   //ejemplo de movies, creo un estado
   const [movies, setMovies] = useState([]);
 
@@ -33,4 +34,5 @@ const Home = () => {
   );
 };
 
-export { Home };
+// export { Home };
+export const Home = withAuth(HomePage)

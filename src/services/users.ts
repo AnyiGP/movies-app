@@ -69,3 +69,4 @@ export const serviceUsers = { add, getAll,
   update, 
   // getByToken, 
   getBy };
+

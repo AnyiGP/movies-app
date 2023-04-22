@@ -1,6 +1,7 @@
 import { Layout } from "../../components";
+import { withAuth } from "../../hoc";
 
-const Search = () => {
+const SearchPage = () => {
   return (
     <>
       <Layout>Buscar{/* formulario buscador */}</Layout>
@@ -8,4 +9,5 @@ const Search = () => {
   );
 };
 
-export { Search };
+// export { Search };
+export const Search = withAuth(SearchPage);

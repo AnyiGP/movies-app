@@ -14,7 +14,7 @@ export type SignUpPayload = SignUpForm;
 
 export type LoginForm = {
   email: string,
-  password: string
+  pass: string
 }
 
 export type Movie = {
