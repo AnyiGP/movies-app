@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Movie } from "../../../types";
 
-const CardMovie: FC<Movie> = ({ id, title, poster_path, backdrop_path }) => {
+const Carrousel: FC<Movie> = ({ id, title, poster_path, backdrop_path }) => {
   return (
     <Card className="text-center" style={{ width: "18rem" }}>
       <Card.Img
@@ -21,4 +21,4 @@ const CardMovie: FC<Movie> = ({ id, title, poster_path, backdrop_path }) => {
   );
 };
 
-export { CardMovie };
+export { Carrousel };
