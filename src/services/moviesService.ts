@@ -1,12 +1,12 @@
 import {} from "../helpers/mapToArray";
 import { Movie } from "../types";
-import { api, apiMovies } from "../utils/axios";
+import { apiMovies } from "../utils/axios";
 
 //trae todas las pelis
-const getAll = async () => {
+const getAll = async (movie: Movie) => {
   const response = await apiMovies.get("/movie/");
 
-  // console.log(response)
+  // console.log(response.data)
   return response.data;
 };
 

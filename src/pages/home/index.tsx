@@ -17,7 +17,7 @@ const HomePage = () => {
     // );
 
     //TENGO QUE HACER LO DE ARRIBA EN EL SERVICIO DE API MOVIES
-  }, []);
+  }, [movies]);
 
 
   // useEffect(() => {
@@ -31,8 +31,10 @@ const HomePage = () => {
         Home
         <ul>
           {/* Slide 5 pelis+ Carrousel populares 10 pelis + Carrousel ultimos-lanzamientos 10 pelis */}
-          {movies.map((Movie) => (
-            <li>{/* {Movie.title} */}</li>
+          {movies.map((movie: Movie) => (
+            <li>
+              {movie.title}
+              </li>
           ))}
         </ul>
       </Layout>
