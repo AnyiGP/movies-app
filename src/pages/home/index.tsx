@@ -1,4 +1,4 @@
-import { Layout } from "../../components";
+import { CardMovie, Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { apiMovies } from "../../utils/axios";
 import { Movie } from "../../types";
@@ -13,17 +13,13 @@ const HomePage = () => {
     apiMovies
       .get("/movie/top_rated")
       .then((response) => setMovies(response.data.results));
-    //   console.log(response.data.results)
-    // );
-
+ 
     //TENGO QUE HACER LO DE ARRIBA EN EL SERVICIO DE API MOVIES
   }, [movies]);
-
 
   // useEffect(() => {
   //   loadMovies()
   // }, [])
-  
 
   return (
     <>
@@ -33,8 +29,13 @@ const HomePage = () => {
           {/* Slide 5 pelis+ Carrousel populares 10 pelis + Carrousel ultimos-lanzamientos 10 pelis */}
           {movies.map((movie: Movie) => (
             <li>
-              {movie.title}
+              <CardMovie {...movie} />
+              {/* <img src={`${`https://image.tmdb.org/t/p/original` + movie.backdrop_path}`} alt="" /> */}
               </li>
+              //COMPONENTE SLIDE
+              //COMPONENTE CORROUSEL POPULARES
+              //COMPONENTE CARROUSEL ULTIMOS LANZAMIENTOS
+       
           ))}
         </ul>
       </Layout>

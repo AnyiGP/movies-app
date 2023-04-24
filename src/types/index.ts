@@ -31,6 +31,10 @@ export type Movie = {
   vote_count: number;
 };
 
+export type imgMovie = {
+  movie_id: string
+}
+
 
 
 //   export type AddTaskForm = Omit<Task, "id" | "category" | "date"> & { category: string, date: string };
