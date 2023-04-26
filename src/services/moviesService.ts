@@ -1,4 +1,4 @@
-import {} from "../helpers/mapToArray";
+import { mapToArray } from "../helpers/mapToArray";
 import { Movie } from "../types";
 import { apiMovies } from "../utils/axios";
 
@@ -10,5 +10,12 @@ const getAll = async (movie: Movie) => {
   return response.data;
 };
 
-export const serviceMovies = { getAll };
+//trae ultimos lanzamientos
+const getLastRelases = async () => {
+  const response = await apiMovies.get("/movie/latest_releases");
+
+  return response.data.results;
+};
+
+export { getAll, getLastRelases };
 // y 'este d'onde lo uso?
