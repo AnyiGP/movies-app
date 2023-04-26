@@ -4,17 +4,31 @@ import { useEffect, useState } from "react";
 import { apiMovies } from "../../utils/axios";
 
 const useMovies = () => {
-  //Creo un estado
   const [movies, setMovies] = useState([]);
 
-  //Pedido a la api
+  const [popular, setPopular] = useState([]);
+  
+  const [top_rated, setTopRated] = useState([]);
+
+  useEffect(() => {
+    apiMovies
+      .get("/movie/now_playing")
+      .then((response) => setMovies(response.data.results.splice(0, 8)));
+  }, []);
+  
+  useEffect(() => {
+    apiMovies
+      .get("/movie/popular")
+      .then((response) => setPopular(response.data.results.splice(0, 10)));
+  }, []);
+  
   useEffect(() => {
     apiMovies
       .get("/movie/top_rated")
-      .then((response) => setMovies(response.data.results));
-  }, [movies]);
+      .then((response) => setTopRated(response.data.results.splice(0, 10)));
+  }, []);
 
-  return { movies };
+  return { movies, popular, top_rated };
 };
 
 export { useMovies };
