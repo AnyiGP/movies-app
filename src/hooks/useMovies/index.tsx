@@ -10,6 +10,9 @@ const useMovies = () => {
   
   const [top_rated, setTopRated] = useState([]);
 
+  const [estrenos, setEstrenos] = useState([]);
+
+
   useEffect(() => {
     apiMovies
       .get("/movie/now_playing")
@@ -28,7 +31,12 @@ const useMovies = () => {
       .then((response) => setTopRated(response.data.results.splice(0, 10)));
   }, []);
 
-  return { movies, popular, top_rated };
+useEffect(() => {
+    apiMovies
+      .get("/movie/upcoming")
+      .then((response) => setEstrenos(response.data.results));
+  }, []);
+  return { movies, popular, top_rated, estrenos };
 };
 
 export { useMovies };

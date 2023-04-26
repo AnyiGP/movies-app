@@ -9,7 +9,7 @@ const CardScroll: FC<PartialMovies> = ({ items }) => {
       <CardGroup style={{overflowX: "auto"}}>
         {items?.map((item: any) => (
           <Card  style={{ margin: "5px" }} className="">
-            <Card.Img
+            <Card.Img className="col card-block"
               variant="top"
               src={`${
                 `https://image.tmdb.org/t/p/original` + item.backdrop_path
