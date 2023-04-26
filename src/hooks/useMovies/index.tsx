@@ -13,7 +13,7 @@ const useMovies = () => {
   useEffect(() => {
     apiMovies
       .get("/movie/now_playing")
-      .then((response) => setMovies(response.data.results.splice(0, 8)));
+      .then((response) => setMovies(response.data.results.splice(0, 5)));
   }, []);
   
   useEffect(() => {
