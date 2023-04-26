@@ -1,10 +1,16 @@
-import { Layout } from "../../components";
+import { CardMovie, Layout } from "../../components";
 import { withAuth } from "../../hoc";
+import { useMovies } from "../../hooks";
 
 const PopularPage = () => {
+
+  const { populares } = useMovies();
+
   return (
     <>
-      <Layout> Populares{/* 20 peliculas + paginador} */}</Layout>
+      <Layout> Populares{/* 20 peliculas + paginador} */}
+      <CardMovie items={populares} />
+      </Layout>
     </>
   );
 };

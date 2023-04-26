@@ -11,11 +11,11 @@ const getAll = async (movie: Movie) => {
 };
 
 //trae ultimos lanzamientos
-const getLastRelases = async () => {
-  const response = await apiMovies.get("/movie/latest_releases");
+const getPopular = async () => {
+  const response = await apiMovies.get("/movie/popular");
 
   return response.data.results;
 };
 
-export { getAll, getLastRelases };
-// y 'este d'onde lo uso?
+export { getAll, getPopular };
+
