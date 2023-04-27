@@ -15,7 +15,7 @@ const CardMovie: FC<PartialMovies> = ({ items }) => {
             />
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
-              // <Card.Text>{item.id}</Card.Text>
+              <Card.Text>{item.id}</Card.Text>
               <Card.Text>
                 Descripción
               </Card.Text>
