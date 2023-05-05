@@ -43,21 +43,21 @@ const SignUp = () => {
     // });
   };
 
-  useEffect(() => {
-    serviceUsers
-      .getAll()
-      .then((data) => console.log(data))
-      .catch((error) => {
-        console.error("Error al guardar datos en Firebase:", error);
-      });
-      // reset({
-      //   name: "",
-      //   lastname: "",
-      //   email: "",
-      //   password: "",
-      //   // birthdate: "" me tira error
-      // });
-  }, []);
+  // useEffect(() => {
+  //   serviceUsers
+  //     .getAll()
+  //     .then((data) => console.log(data))
+  //     .catch((error) => {
+  //       console.error("Error al guardar datos en Firebase:", error);
+  //     });
+  //     // reset({
+  //     //   name: "",
+  //     //   lastname: "",
+  //     //   email: "",
+  //     //   password: "",
+  //     //   // birthdate: "" me tira error
+  //     // });
+  // }, []);
 
   const handleReset = () => {
     reset({

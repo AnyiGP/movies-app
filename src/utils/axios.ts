@@ -3,7 +3,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL: "https://movies-app-7da5f-default-rtdb.firebaseio.com/"});
 
-// api.post("/users.json");
+
 
 // solicitadues mas complejas que son a la base de datos de firebase
 // post para registrar,

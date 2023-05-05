@@ -17,5 +17,14 @@ const getPopular = async () => {
   return response.data.results;
 };
 
-export { getAll, getPopular };
+/////////////////////////
+const getById = async (id: string) => {
+  const response = await apiMovies.get(`/movie/${id}`);
+
+  console.log(response.data)
+  return response.data;
+};
+////////////////////////////
+
+export { getAll, getPopular, getById };
 
