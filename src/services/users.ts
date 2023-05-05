@@ -30,8 +30,8 @@ const add = async (
 const getAll = async () => {
   const response = await api.get("/users.json");
 
-  console.log(response);
-  return response.data;
+  // console.log(response);
+  return response.data.results;
 };
 
 export const serviceUsers = { add, getAll };
