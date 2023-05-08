@@ -23,6 +23,8 @@ const getById = async (id: string) => {
 
   console.log(response.data)
   return response.data;
+  
+  // return response.data.results;
 };
 ////////////////////////////
 

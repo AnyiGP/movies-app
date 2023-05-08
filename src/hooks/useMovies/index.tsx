@@ -56,11 +56,13 @@ const useMovies = () => {
   // }, []);
 
 
-  useEffect(() => {
-    apiMovies
-      .get(`/movie/${id} `) //594767 ${item.id}
-      .then((response) => setMovieId(response.data.results));
-  }, []);
+
+
+  // useEffect(() => {
+  //   apiMovies
+  //     .get(`/movie/${id}`) //594767 ${item.id}
+  //     .then((response) => setMovieId(response.data.results));
+  // }, []);
 
   return { movies, popular, top_rated, estrenos, populares };
 };
