@@ -5,6 +5,7 @@ const Signup = () => {
     <Layout>
       {/* Formulario de sign-up */}
       Formulario Sign-Up
+      <SignUpForm />
     </Layout>
   );
 };

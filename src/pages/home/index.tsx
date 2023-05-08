@@ -1,7 +1,7 @@
 import { Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { apiMovies } from "../../utils/axios";
-import { MovieType } from '../../types'
+import { Movie } from "../../types";
 
 const Home = () => {
   //   //ejemplo de movies, creo un estado
@@ -9,13 +9,13 @@ const Home = () => {
 
   //   //pido a la api
   useEffect(() => {
-    apiMovies.get("/movie/top_rated").then((response) =>
-      setMovies(response.data.results));
+    apiMovies
+      .get("/movie/top_rated")
+      .then((response) => setMovies(response.data.results));
     //   console.log(response.data.results)
     // );
 
     //TENGO QUE HACER LO DE ARRIBA EN EL SERVICIO DE API MOVIES
-
   }, []);
 
   return (
@@ -24,10 +24,8 @@ const Home = () => {
         Home
         <ul>
           {/* Slide 5 pelis+ Carrousel populares 10 pelis + Carrousel ultimos-lanzamientos 10 pelis */}
-          {movies.map(movie => (
-            <li>
-                {/* {movie.title} */}
-                </li>
+          {movies.map((Movie) => (
+            <li>{/* {Movie.title} */}</li>
           ))}
         </ul>
       </Layout>
