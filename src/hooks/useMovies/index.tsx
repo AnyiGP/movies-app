@@ -18,7 +18,7 @@ const useMovies = () => {
 
   const [movieId, setMovieId] = useState<PartialMovies>();
 
-  const { id } = useParams()
+  const { id } = useParams();
 
   useEffect(() => {
     apiMovies
@@ -46,7 +46,6 @@ const useMovies = () => {
 
   useEffect(() => {
     apiMovies
-
       .get("/movie/popular")
       .then((response) => setPopulares(response.data.results));
   }, []);
@@ -66,8 +65,13 @@ const useMovies = () => {
   // console.log(movieId)
   /////////////////////////////////////
 
-  return { movies, popular, top_rated, estrenos, populares, 
-    // movieId 
+  return {
+    movies,
+    popular,
+    top_rated,
+    estrenos,
+    populares,
+    // movieId
   };
 };
 

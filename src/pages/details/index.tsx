@@ -5,11 +5,10 @@ import { withAuth } from "../../hoc";
 import { useParams } from "react-router-dom";
 import { Movie, PartialMovies } from "../../types";
 import { getById } from "../../services/moviesService";
-import { Container } from "react-bootstrap";
+import { Card, Col, Container } from "react-bootstrap";
 import { useMovies } from "../../hooks";
 import { apiMovies } from "../../utils/axios";
 import { idText } from "typescript";
-
 
 // const DetailsPage: FC<PartialMovies> = ({ items }) => {
 const DetailsPage = () => {
@@ -35,7 +34,7 @@ const DetailsPage = () => {
 
   // console.log(movieId);
   //////////////////////////////////////
-  
+
   return (
     <>
       <Layout>
@@ -43,11 +42,36 @@ const DetailsPage = () => {
         <Container>
           <div>
             <h2>DETALLES</h2>
-            {/* <p>{items?.id}</p> */}
-            <p>{id}</p>
-            <p>{movieId?.title}</p>
           </div>
         </Container>
+        <Col>
+          <Card>
+            <Card.Img
+              variant="top"
+              src={`${
+                `https://image.tmdb.org/t/p/original` + movieId?.backdrop_path
+              }`}
+              alt=""
+            />
+            <Card.Body>
+              <Card.Title>
+                Título: <p>{movieId?.title}</p>
+              </Card.Title>
+              <Card.Text>
+                Id <p>{movieId?.id}</p>
+              </Card.Text>
+              <Card.Text>
+                Descripción: <p>{movieId?.overview}</p>
+              </Card.Text>
+              <Card.Text>
+                Fecha de realización <p>{movieId?.release_date}</p>
+              </Card.Text>
+              <Card.Text>
+                Votos: <p>{movieId?.vote_count}</p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
       </Layout>
     </>
   );
