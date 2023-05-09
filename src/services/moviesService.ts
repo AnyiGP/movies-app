@@ -2,6 +2,7 @@ import { mapToArray } from "../helpers/mapToArray";
 import { Movie } from "../types";
 import { apiMovies } from "../utils/axios";
 
+
 //trae todas las pelis
 const getAll = async (movie: Movie) => {
   const response = await apiMovies.get("/movie/");
@@ -20,13 +21,11 @@ const getPopular = async () => {
 /////////////////////////
 const getById = async (id: string) => {
   const response = await apiMovies.get(`/movie/${id}`);
+  //como hago para traerme el id del click ej 594767
 
-  console.log(response.data)
+  // console.log(response.data)
   return response.data;
-  
-  // return response.data.results;
 };
 ////////////////////////////
 
 export { getAll, getPopular, getById };
-

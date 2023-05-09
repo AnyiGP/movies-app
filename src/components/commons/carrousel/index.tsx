@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Button, Card, Carousel } from "react-bootstrap";
 import { Movie, PartialMovies } from "../../../types";
 import { useNavigate } from "react-router-dom";
-
+/////////////////////////////
 const Carrousel: FC<PartialMovies> = ({ items }) => {
   const navigate = useNavigate();
 
@@ -30,3 +30,4 @@ const Carrousel: FC<PartialMovies> = ({ items }) => {
 };
 
 export { Carrousel };
+///////////////////////////////////////////

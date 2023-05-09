@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { StoreContext } from "../../contexts";
 import { useEffect, useState } from "react";
 import { apiMovies } from "../../utils/axios";
+import { Movie, PartialMovies } from "../../types";
 import { useParams } from "react-router-dom";
 
 const useMovies = () => {
@@ -15,7 +16,7 @@ const useMovies = () => {
 
   const [populares, setPopulares] = useState([]);
 
-  const [movieId, setMovieId] = useState([]);
+  const [movieId, setMovieId] = useState<PartialMovies>();
 
   const { id } = useParams()
 
@@ -55,16 +56,19 @@ const useMovies = () => {
   //   getPopular().then((response) => setPopulares(response.data.results));
   // }, []);
 
-
-
-
+  ///////////HAGO LO MISMO EN SERVICES////////////////////
   // useEffect(() => {
   //   apiMovies
   //     .get(`/movie/${id}`) //594767 ${item.id}
   //     .then((response) => setMovieId(response.data.results));
-  // }, []);
+  // }, [id]);
 
-  return { movies, popular, top_rated, estrenos, populares };
+  // console.log(movieId)
+  /////////////////////////////////////
+
+  return { movies, popular, top_rated, estrenos, populares, 
+    // movieId 
+  };
 };
 
 export { useMovies };
