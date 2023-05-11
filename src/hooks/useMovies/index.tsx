@@ -6,6 +6,8 @@ import { Movie, PartialMovies } from "../../types";
 import { useParams } from "react-router-dom";
 
 const useMovies = () => {
+  const [allMovies, setAllMovies] = useState([]);
+
   const [movies, setMovies] = useState([]);
 
   const [popular, setPopular] = useState([]);
@@ -19,6 +21,12 @@ const useMovies = () => {
   const [movieId, setMovieId] = useState<PartialMovies>();
 
   const { id } = useParams();
+
+  useEffect(() => {
+    apiMovies
+      .get("/movie/now_playing")
+      .then((response) => setAllMovies(response.data.results));
+  }, []);
 
   useEffect(() => {
     apiMovies
@@ -65,7 +73,10 @@ const useMovies = () => {
   // console.log(movieId)
   /////////////////////////////////////
 
+
+
   return {
+    allMovies,
     movies,
     popular,
     top_rated,

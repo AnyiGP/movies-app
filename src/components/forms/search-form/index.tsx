@@ -2,7 +2,14 @@
 
 import { Button, Form, Row } from "react-bootstrap";
 
+
 const SearchForm = () => {
+  //1- TRAER TODAS LA MOVIES
+//DESDE EL SERVICIO O DESDE EL HOOK
+
+  //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT
+  //3- MOSTRAR EL RESULTADO DEL FILTRADO EN CARDS EN UNA GRILLA EN LA PAGINA DE BUSQUEDA
+
   return (
     <Form
       className="px-5 mt-5"
@@ -17,7 +24,7 @@ const SearchForm = () => {
           <Form.Control
             type="text"
             placeholder="Título"
-            // {...register("pass")}
+            // {...register("pass")} //
           />
         </Form.Group>
       </Row>
