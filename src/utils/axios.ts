@@ -8,7 +8,7 @@ const api = axios.create({
   // }
 });
 
-api.post("/users.json");
+
 //params {key: "lkdlaksdkajslk", token: "aksldhas"}//
 
 // solicitadues mas complejas que son a la base de datos de firebase
