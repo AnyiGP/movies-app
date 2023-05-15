@@ -1,6 +1,13 @@
 // import { Layout } from "../../components";
 
 import { Button, Form, Row } from "react-bootstrap";
+import { useState } from "react";
+
+// const defaultValues = {
+//   text: ''
+// }
+
+// const [fields, setFields] = useState({text: ''}) //valor por defecto en el form
 
 
 const SearchForm = () => {

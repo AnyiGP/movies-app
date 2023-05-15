@@ -21,12 +21,13 @@ const useMovies = () => {
   const [movieId, setMovieId] = useState<PartialMovies>();
 
   const { id } = useParams();
-
+////////////////////////////
   useEffect(() => {
     apiMovies
       .get("/movie/now_playing")
       .then((response) => setAllMovies(response.data.results));
   }, []);
+/////////////////////////////
 
   useEffect(() => {
     apiMovies

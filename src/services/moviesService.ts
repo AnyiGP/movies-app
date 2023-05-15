@@ -7,7 +7,7 @@ import { apiMovies } from "../utils/axios";
 const getAll = async (movie: Movie) => {
   const response = await apiMovies.get("/movie/");
 
-  // console.log(response.data)
+  console.log(response.data)
   return response.data;
 };
 
