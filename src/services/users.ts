@@ -1,3 +1,4 @@
+import { mapToArray } from "../helpers/mapToArray";
 import { SignUpPayload } from "../types";
 import { User } from "../types";
 import { api } from "../utils/axios";
@@ -27,11 +28,45 @@ const add = async (
   return response.data;
 };
 
-const getAll = async () => {
+const getAll = async (): Promise<User[]> => {
   const response = await api.get("/users.json");
 
   // console.log(response);
-  return response.data.results;
+  return mapToArray(response.data);
 };
 
-export const serviceUsers = { add, getAll };
+// const getByEmail = async (email: string) => {
+//   const users = await getAll();
+//   const user = users.find((user) => user.email === email);
+
+//   // console.log(response);
+//   return user;
+// };
+
+// const getByToken = async (token: string) => {
+//   const users = await getAll();
+//   const user = users.find((user) => user.token === token);
+
+//   // console.log(response);
+//   return user;
+// };
+
+const getBy = async (type: 'email'| 'token', value: string) => {
+  const users = await getAll();
+  const user = users.find((user) => user[type] === value);
+
+  // console.log(response);
+  return user;
+};
+
+
+const update = ({ id, ...rest }: Partial<User>) => {
+  const response = api.patch(`/users/${id}.json`, { ...rest });
+};
+
+export const serviceUsers = { add, getAll, 
+  // getByEmail, 
+  update, 
+  // getByToken, 
+  getBy };
+

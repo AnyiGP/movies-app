@@ -1,7 +1,23 @@
-import { Layout } from "../../components";
+import { Link } from "react-router-dom";
+import { Layout, LoginForm } from "../../components";
+import { withAuth } from "../../hoc";
+import { useMe } from "../../hooks";
 
-const Login = () => {
-  return <Layout>Formulario Login</Layout>;
+const LoginPage = () => {
+  // const { login } = useMe()
+
+  // const handleSubmit = () => {
+
+  //   // login(user, pass)
+  // }
+
+  return (
+    <Layout>
+      Formulario Login
+      <LoginForm />
+      <Link to="/sign-up">Registrate</Link>
+    </Layout>
+  );
 };
 
-export { Login };
+export const Login = withAuth(LoginPage);

@@ -1,6 +1,7 @@
 import { Layout } from "../../components";
+import { withAuth } from "../../hoc";
 
-const Details = () => {
+const DetailsPage = () => {
   return (
     <>
       {" "}
@@ -12,4 +13,5 @@ const Details = () => {
   );
 };
 
-export { Details };
+// export { Details };
+export const Details = withAuth(DetailsPage)

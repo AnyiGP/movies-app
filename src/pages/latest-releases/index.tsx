@@ -1,6 +1,7 @@
 import { Layout } from "../../components";
+import { withAuth } from "../../hoc";
 
-const LatestReleases = () => {
+const LatestReleasesPage = () => {
   return (
     <>
       <Layout>Ultimos Lanzamientos{/* 20 peliculas + paginador} */}</Layout>
@@ -8,4 +9,5 @@ const LatestReleases = () => {
   );
 };
 
-export { LatestReleases };
+// export { LatestReleases };
+export const LatestReleases = withAuth(LatestReleasesPage)
