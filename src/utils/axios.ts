@@ -1,15 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://movies-app-7da5f-default-rtdb.firebaseio.com/",
-  // params: {
-  //   api_key: 'prueba-api-key',
-  //   prueba: 'prueba-2'
-  // }
-});
+  baseURL: "https://movies-app-7da5f-default-rtdb.firebaseio.com/"});
 
-
-//params {key: "lkdlaksdkajslk", token: "aksldhas"}//
 
 // solicitadues mas complejas que son a la base de datos de firebase
 // post para registrar,

@@ -18,18 +18,28 @@ export type LoginForm = {
 }
 
 export type Movie = {
-  id: string;
   title: string;
-  // date: Date;
+  id: string;
   poster_path: string;
   description: string;
   video: boolean;
-  //faltan agregar propiedades
+  overview: string;
+  backdrop_path?: string | null;
+  budget: string;
+  homepage: string;
+  release_date: string;
+  vote_count: number;
 };
 
+export type imgMovie = {
+  movie_id: string
+}
 
-export type MovieTypePayload = Omit<Movie, "id">;
-// export { Movie }
+export type PartialMovies = {
+  items: Partial<Movie>[]
+  text?: string
+};
+
 
 
 //   export type AddTaskForm = Omit<Task, "id" | "category" | "date"> & { category: string, date: string };
