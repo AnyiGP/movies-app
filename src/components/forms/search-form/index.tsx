@@ -3,19 +3,26 @@
 import { Button, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 
+
+/////////////////////
 // const defaultValues = {
 //   text: ''
 // }
 
-// const [fields, setFields] = useState({text: ''}) //valor por defecto en el form
+// const [fields, setFields] = useState(defaultValues) //valor por defecto en el form
 
 
 const SearchForm = () => {
   //1- TRAER TODAS LA MOVIES
 //DESDE EL SERVICIO O DESDE EL HOOK
 
-  //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT
+  //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT al array que me traido de pel'iculas le tengo que pasar el filter que es un metodo de array []
+
+
+
   //3- MOSTRAR EL RESULTADO DEL FILTRADO EN CARDS EN UNA GRILLA EN LA PAGINA DE BUSQUEDA
+
+  const [] = useState()
 
   return (
     <Form
@@ -32,6 +39,8 @@ const SearchForm = () => {
             type="text"
             placeholder="Título"
             // {...register("pass")} //
+            onChange={() => {}}
+            
           />
         </Form.Group>
       </Row>
