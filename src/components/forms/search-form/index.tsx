@@ -2,12 +2,12 @@ import { Form, Row } from "react-bootstrap";
 import { FC, useEffect, useState } from "react";
 import { Props } from "./type";
 
+// type Props = {
+//   onSearch: (param: string) => void
+// }
+
 const SearchForm: FC<Props> = ({ onSearch }) => {
-  //1- TRAER TODAS LA MOVIES
-  //DESDE EL SERVICIO O DESDE EL HOOK
-
-  //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT
-
+ 
   const [fields, setFields] = useState(""); //valor por defecto en el campo del formulario
 
   useEffect(() => {

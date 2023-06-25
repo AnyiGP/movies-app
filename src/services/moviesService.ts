@@ -2,26 +2,6 @@ import { mapToArray } from "../helpers/mapToArray";
 import { Movie } from "../types";
 import { apiMovies } from "../utils/axios";
 
-// type GetAllPayload = {
-//   text: string;
-// };
-
-//trae todas las pelis
-// const getAll = async (
-//   // movie: Movie
-//   searchQuery: GetAllPayload
-// ): Promise<Movie[]> => {
-//   const response = await apiMovies.get("/movie/");
-
-//   let data = await response.data();
-
-//   data = mapToArray<Movie>(data);
-
-//   return data;
-//   // console.log(response.data)
-//   // return response.data;
-// };
-
 //trae ultimos lanzamientos
 const getPopular = async () => {
   const response = await apiMovies.get("/movie/popular");

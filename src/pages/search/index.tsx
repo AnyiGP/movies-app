@@ -24,7 +24,6 @@ const SearchPage = () => {
     setSearchParams(params);
   }, [params]);
 
-  
   useEffect(() => {
     const query = searchParams.get("query");
 
@@ -33,38 +32,19 @@ const SearchPage = () => {
     });
   }, [searchParams]);
 
-   //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT
+  //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT
 
-  // useEffect(() => {
-  //   /////estaba probando la funci'on para que tome el texto y lo filtre en el sarch page
-
-  //   // allMovies.getAll({text: ""}).then(data => setMovie(data))
-
-  //   // getAll().then((response)=> {
-  //   //   setMovie(response)
-  //   // })
-
-  //   //obtener el query param y guardar el query param
-  //   // console.log(searchParams);
-
-  //   //guarda el dato en la url, cambia arriba
-  //   // setSearchParams({ prueba: "Valor Prueba" });
-  // }, []);
-
-  //3- MOSTRAR EL RESULTADO DEL FILTRADO EN CARDS EN UNA GRILLA EN LA PAGINA DE BUSQUEDA, a medida que el usuario escribe defin query param en la url o que devuelva los values.
-
-  // const [] = useState();
+  //3- MOSTRAR EL RESULTADO DEL FILTRADO EN CARDS EN UNA GRILLA EN LA PAGINA DE BUSQUEDA, a medida que el usuario escribe define query param en la url y devuelve los values.
 
   return (
     <>
       <Layout>
         Buscar
-        {/* ({searchParams.get("prueba")}) //muestra lo q escribe en el buscador, el parámetro que define el usuario */}
         <SearchForm
           onSearch={(param: string) => {
             setParams((prevState) => ({ ...prevState, query: param }));
           }}
-          // formulario donde tengo q ir a buscar el evento del btn
+          // formulario donde tengo q ir a buscar el evento onChange
         />
         <CardMovie
           // items={allMovies}
@@ -75,5 +55,4 @@ const SearchPage = () => {
   );
 };
 
-// export { Search };
 export const Search = withAuth(SearchPage);
