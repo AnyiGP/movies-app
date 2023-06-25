@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { mapToArray } from "../helpers/mapToArray";
 import { Movie } from "../types";
 import { apiMovies } from "../utils/axios";
+
+const [movieId, setMovieId] = useState()
 
 //trae todas las pelis
 const getAll = async (movie: Movie) => {
@@ -11,11 +14,25 @@ const getAll = async (movie: Movie) => {
 };
 
 //trae ultimos lanzamientos
-const getLastRelases = async () => {
-  const response = await apiMovies.get("/movie/latest_releases");
+const getPopular = async () => {
+  const response = await apiMovies.get("/movie/popular");
 
   return response.data.results;
 };
 
-export { getAll, getLastRelases };
-// y 'este d'onde lo uso?
+
+const getById = async (id: string) => {
+  const response = await apiMovies.get(`/movie/${id}`);
+  
+  console.log(response);
+  // return response.data.results;
+
+  setMovieId(response.data)
+  
+};
+
+
+export { getAll, getPopular, 
+  getById, movieId
+ };
+
