@@ -1,65 +1,33 @@
-// import { Layout } from "../../components";
+import { Form, Row } from "react-bootstrap";
+import { FC, useEffect, useState } from "react";
+import { Props } from "./type";
 
-import { Button, Form, Row } from "react-bootstrap";
-import { useState } from "react";
-
-
-/////////////////////
-// const defaultValues = {
-//   text: ''
-// }
-
-// const [fields, setFields] = useState(defaultValues) //valor por defecto en el form
-
-
-const SearchForm = () => {
+const SearchForm: FC<Props> = ({ onSearch }) => {
   //1- TRAER TODAS LA MOVIES
-//DESDE EL SERVICIO O DESDE EL HOOK
+  //DESDE EL SERVICIO O DESDE EL HOOK
 
-  //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT al array que me traido de pel'iculas le tengo que pasar el filter que es un metodo de array []
+  //2- FILTRAR A MEDIDA QUE EL USUARIO ESCRIBE EN EL INPUT
 
+  const [fields, setFields] = useState(""); //valor por defecto en el campo del formulario
 
-
-  //3- MOSTRAR EL RESULTADO DEL FILTRADO EN CARDS EN UNA GRILLA EN LA PAGINA DE BUSQUEDA
-
-  const [] = useState()
+  useEffect(() => {
+    onSearch(fields);
+  }, [fields]);
 
   return (
-    <Form
-      className="px-5 mt-5"
-      // onSubmit={handleSubmit(onSubmit)}
-    >
+    <Form className="px-5 mt-5">
       <Row className="mb-3">
-        <Form.Group
-          // as={Col}
-          controlId="formPassword"
-        >
+        <Form.Group>
           <Form.Label>Ingresar búsqueda</Form.Label>
           <Form.Control
             type="text"
             placeholder="Título"
-            // {...register("pass")} //
-            onChange={() => {}}
-            
+            name="query"
+            value={fields}
+            onChange={(e) => setFields(e.target.value)}
           />
         </Form.Group>
       </Row>
-
-      <Button
-        variant="primary"
-        type="submit"
-        // onClick={`BUSCAR MOVIE CUANDO COINCIDA`}
-      >
-        Buscar
-      </Button>
-
-      <Button
-        variant="secondary"
-        type="button"
-        // onClick={handleReset}
-      >
-        Limpiar
-      </Button>
     </Form>
   );
 };

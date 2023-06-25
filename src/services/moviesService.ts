@@ -2,25 +2,25 @@ import { mapToArray } from "../helpers/mapToArray";
 import { Movie } from "../types";
 import { apiMovies } from "../utils/axios";
 
-type GetAllPayload = {
-  text: string
-}
+// type GetAllPayload = {
+//   text: string;
+// };
 
 //trae todas las pelis
-const getAll = async (
-  // movie: Movie
-  searchQuery: GetAllPayload
-  ): Promise<Movie[]> => {
-  const response = await apiMovies.get("/movie/");
+// const getAll = async (
+//   // movie: Movie
+//   searchQuery: GetAllPayload
+// ): Promise<Movie[]> => {
+//   const response = await apiMovies.get("/movie/");
 
-  let data = await response.data() 
-  
-  data = mapToArray<Movie>(data)
+//   let data = await response.data();
 
-  return data
-  // console.log(response.data)
-  // return response.data;
-};
+//   data = mapToArray<Movie>(data);
+
+//   return data;
+//   // console.log(response.data)
+//   // return response.data;
+// };
 
 //trae ultimos lanzamientos
 const getPopular = async () => {
@@ -38,13 +38,12 @@ const getById = async (id: string) => {
   return response.data;
 };
 ////////////////////////////
+//con query defino la busqueda, debe traer un objeto con todos los resultados
 
-const getSearch = async (query: string | null) => {
-  const response = await apiMovies.get("/search/movie", {params:
-    {query: query},});
-
-    console.log(response.data)
+const getSearch = async (params: { query?: string }) => {
+  const response = await apiMovies.get("/search/movie", { params });
+  // console.log(response.data)
   return response.data;
 };
 
-export { getAll, getPopular, getById, getSearch };
+export { getPopular, getById, getSearch };
