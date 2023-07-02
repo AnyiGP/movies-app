@@ -1,6 +1,6 @@
 import { Layout } from "../../components";
 import { withAuth } from "../../hoc";
-import { Carrousel } from "../../components/commons";
+import { Carrousel, Pager } from "../../components/commons";
 import { useMovies } from "../../hooks";
 import { CardScroll } from "../../components/commons/card-scroll";
 
@@ -17,6 +17,7 @@ const HomePage = () => {
         <CardScroll items={popular}></CardScroll>
         Mejor puntadas
         <CardScroll items={top_rated}></CardScroll>
+        <Pager></Pager>
       </Layout>
     </>
   );
