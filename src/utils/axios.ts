@@ -4,6 +4,7 @@ const api = axios.create({
   baseURL: "https://movies-app-7da5f-default-rtdb.firebaseio.com/"});
 
 
+
 // solicitadues mas complejas que son a la base de datos de firebase
 // post para registrar,
 // get para buscar a los usuarios

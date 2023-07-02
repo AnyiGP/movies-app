@@ -2,6 +2,7 @@ import { mapToArray } from "../helpers/mapToArray";
 import { Movie } from "../types";
 import { apiMovies } from "../utils/axios";
 
+
 //trae todas las pelis
 const getAll = async (movie: Movie) => {
   const response = await apiMovies.get("/movie/");
@@ -11,11 +12,20 @@ const getAll = async (movie: Movie) => {
 };
 
 //trae ultimos lanzamientos
-const getLastRelases = async () => {
-  const response = await apiMovies.get("/movie/latest_releases");
+const getPopular = async () => {
+  const response = await apiMovies.get("/movie/popular");
 
   return response.data.results;
 };
 
-export { getAll, getLastRelases };
-// y 'este d'onde lo uso?
+/////////////////////////
+const getById = async (id: string) => {
+  const response = await apiMovies.get(`/movie/${id}`);
+  //como hago para traerme el id del click ej 594767
+
+  // console.log(response.data)
+  return response.data;
+};
+////////////////////////////
+
+export { getAll, getPopular, getById };
