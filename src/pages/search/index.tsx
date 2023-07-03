@@ -5,6 +5,7 @@ import { useMovies } from "../../hooks";
 import { useSearchParams } from "react-router-dom";
 import { getSearch } from "../../services/moviesService";
 import { Movie } from "../../types";
+import { PageControl } from "../../components/commons";
 
 const SearchPage = () => {
   //no mostar las pelis hasta que el usuario empiece a escribir en el input de formulario del buscador
@@ -50,6 +51,7 @@ const SearchPage = () => {
           // items={allMovies}
           items={movie}
         />
+        <PageControl></PageControl>
       </Layout>
     </>
   );

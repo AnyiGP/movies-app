@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Pagination  } from "react-bootstrap";
 // import { } from "../../../types";
 
-const Pager: FC = (
+const PageControl: FC = (
   {
     //   id,
     //   title,
@@ -22,4 +22,4 @@ const Pager: FC = (
   );
 };
 
-export { Pager };
+export { PageControl };
