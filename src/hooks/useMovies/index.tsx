@@ -76,8 +76,6 @@ const useMovies = () => {
   // console.log(movieId)
   /////////////////////////////////////
 
-
-
   return {
     allMovies,
     movies,
