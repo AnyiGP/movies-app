@@ -1,22 +1,28 @@
 import { FC } from "react";
-import { Pagination  } from "react-bootstrap";
+import { Pagination } from "react-bootstrap";
+import { useCounter } from "../../../hooks";
 // import { } from "../../../types";
 
-const PageControl: FC = (
-  {
-    //   id,
-    //   title,
-    //   img,
-    //   description,
-    //   category,
-  }
-) => {
+// type Props = {
+//   totalPages: number;
+//   onClick: (page: string) => void;
+// };
+
+//le tengo que pasar las páginas
+// const PageControl: FC<Props> = ({ totalPages, onClick }) => {
+//   const { count, increment, decrement, firstPage } = useCounter(1);
+//   console.log(PageControl);
+
+   const PageControl = () => {
+    const { count, increment, decrement, firstPage } = useCounter(1);
+   console.log(PageControl)
+
   return (
     <Pagination>
-      <Pagination.First />
-      <Pagination.Prev />
-      <Pagination.Item>{1}</Pagination.Item>
-      <Pagination.Next />
+      <Pagination.First onClick={firstPage} />
+      <Pagination.Prev onClick={decrement} />
+      <Pagination.Item value={count}>{count}</Pagination.Item>
+      <Pagination.Next onClick={increment} />
       <Pagination.Last />
     </Pagination>
   );

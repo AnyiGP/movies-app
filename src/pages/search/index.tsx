@@ -51,7 +51,7 @@ const SearchPage = () => {
           // items={allMovies}
           items={movie}
         />
-        <PageControl></PageControl>
+        <PageControl/>
       </Layout>
     </>
   );
