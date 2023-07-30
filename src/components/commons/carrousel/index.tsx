@@ -9,7 +9,10 @@ const Carrousel: FC<PartialMovies> = ({ items }) => {
   return (
     <Carousel fade>
       {items?.map((item: any) => (
-        <Carousel.Item>
+        <Carousel.Item 
+        key={item.id}
+        onClick={() => navigate(`/movie/${item.id}`)}
+        >
           <img
             key={item.id}
             onClick={() => navigate(`/movie/${item.id}`)}
