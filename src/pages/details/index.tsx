@@ -13,7 +13,7 @@ import { idText } from "typescript";
 // const DetailsPage: FC<PartialMovies> = ({ items }) => {
 const DetailsPage = () => {
   /////////////////////////////////
-  const [movieId, setMovieId] = useState<Movie>();  
+  const [movieId, setMovieId] = useState<Movie>();
   const { id } = useParams();
 
   useEffect(() => {
